@@ -1,0 +1,222 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+:root {
+  --fs-50: 0.9rem;
+  --fs-100: 1rem;
+  --fs-150: 1.15rem;
+  --fs-200: 1.5rem;
+  --fs-300: 2rem;
+  --fs-400: 3rem;
+  --fs-500: 5rem;
+  --fw-300: 300;
+  --fw-400: 400;
+  --fw-500: 500;
+  --fw-600: 600;
+  --clr-text: #333;
+  --clr-white: #fff;
+  --clr-main: #ed3263;
+  --clr-green: #388e3c;
+  --clr-orange: #ffa000;
+  --container: 70rem;
+}
+body {
+  font-family: "Poppins", sans-serif;
+  font-size: var(--fs-100);
+  font-weight: var(--fw-200);
+  color: var(--clr-text);
+  line-height: 1.5;
+}
+
+.header {
+  color: var(--clr-white);
+}
+
+.section {
+  display: grid;
+  grid-template-columns: subgrid;
+  grid-column: container-start/container-end;
+  padding-top: 4rem;
+}
+
+@keyframes pulse {
+  10% {
+    transform: scale(1.1);
+  }
+}
+.main-grid {
+  --padding: 2rem;
+  --container: 80rem;
+  display: grid;
+  grid-template-columns: [full-start] var(--padding) [main-start] 1fr [container-start] minmax(0, var(--container)) [container-end] 1fr [main-end] var(--padding) [full-end];
+}
+
+.navigation {
+  display: grid;
+  grid-template-columns: subgrid;
+  grid-column: full-start/full-end;
+  padding: 1rem 0;
+  background-color: black;
+}
+.navigation__content {
+  display: flex;
+  grid-template-columns: subgrid;
+  grid-column: container-start/container-end;
+  justify-content: space-between;
+  align-items: center;
+}
+.navigation__logo {
+  height: 6rem;
+}
+.navigation__list {
+  display: flex;
+  gap: 4rem;
+  list-style: none;
+}
+.navigation__link:link, .navigation__link:visited {
+  display: block;
+  text-decoration: none;
+  color: var(--clr-white);
+  font-size: var(--fs-100);
+  font-weight: 500;
+  text-transform: uppercase;
+  transition: color 0.3s;
+}
+.navigation__link:hover {
+  color: var(--clr-main);
+  animation: pulse 1s infinite;
+}
+
+.giveaway {
+  --column: 4;
+  --gap: 2rem;
+  position: relative;
+  font-size: var(--fs-50);
+  scroll-padding-left: 1rem;
+}
+.giveaway__wrapper {
+  display: grid;
+  column-gap: var(--gap);
+  grid-auto-flow: column;
+  grid-auto-columns: calc((100% - (var(--column) - 1) * var(--gap)) / var(--column));
+  padding: 1rem;
+  overflow: hidden;
+  scroll-behavior: smooth;
+  scroll-snap-type: x mandatory;
+}
+.giveaway__item {
+  position: relative;
+  display: grid;
+  row-gap: 2rem;
+  justify-items: start;
+  box-shadow: 4px 4px 16px 0px rgba(0, 0, 0, 0.15);
+  padding: 1rem;
+  overflow: hidden;
+  scroll-snap-align: start;
+}
+.giveaway__item::before {
+  content: "FEATURED";
+  top: 20px;
+  left: -60px;
+  position: absolute;
+  display: block;
+  transform: rotate(-45deg);
+  padding: 0.25rem 4rem;
+  background-color: var(--clr-main);
+  color: #fff;
+}
+.giveaway__figure {
+  overflow: hidden;
+}
+.giveaway__img {
+  object-fit: contain;
+}
+.giveaway__heading {
+  text-align: center;
+  font-size: inherit;
+}
+.giveaway__keys {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  width: 100%;
+  font-size: var(--fs-50);
+}
+.giveaway__progressbar {
+  position: relative;
+  flex: 1;
+  height: 1rem;
+}
+.giveaway__progressbar::after {
+  content: "";
+  position: absolute;
+  width: var(--keys, 50%);
+  height: 100%;
+  background-color: var(--bg, red);
+  border-radius: 1rem;
+}
+
+.btn {
+  border: none;
+  border-radius: 0.5rem;
+  padding: 0.5em 1em;
+}
+.btn--full {
+  background-color: var(--clr-main);
+  color: #fff;
+}
+.btn--end {
+  justify-self: end;
+}
+.btn--redeem {
+  font-size: var(--fs-50);
+}
+.btn:hover {
+  animation: pulse 1s infinite;
+}
+
+.control {
+  top: 50%;
+  transform: translateY(-50%);
+  position: absolute;
+  border: none;
+  border-radius: 50%;
+  width: 2rem;
+  height: 2rem;
+  background-color: var(--clr-main);
+  color: #fff;
+}
+.control--right {
+  right: 0;
+}
+.control--left {
+  left: 0;
+}
+
+/*# sourceMappingURL=style.css.map */

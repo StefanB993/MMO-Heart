@@ -1,0 +1,25 @@
+:root {
+  --fs-50: 0.9rem;
+  --fs-100: 1rem;
+  --fs-150: 1.15rem;
+  --fs-200: 1.5rem;
+  --fs-300: 2rem;
+  --fs-400: 3rem;
+  --fs-500: 5rem;
+
+  --fw-300: 300;
+  --fw-400: 400;
+  --fw-500: 500;
+  --fw-600: 600;
+
+  --clr-text: #333;
+  --clr-white: #fff;
+  --clr-main: #ed3263;
+  --clr-green: #388e3c;
+  --clr-orange: #ffa000;
+
+  --container: 70rem;
+
+  @media (width < 37.5rem) {
+  }
+}

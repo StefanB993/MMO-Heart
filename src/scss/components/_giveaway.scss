@@ -1,0 +1,78 @@
+.giveaway {
+  --column: 4;
+  --gap: 2rem;
+  position: relative;
+  font-size: var(--fs-50);
+  scroll-padding-left: 1rem;
+
+  &__wrapper {
+    display: grid;
+    column-gap: var(--gap);
+    grid-auto-flow: column;
+    grid-auto-columns: calc((100% - (var(--column) - 1) * var(--gap)) / var(--column));
+    padding: 1rem;
+    overflow: hidden;
+    scroll-behavior: smooth;
+    scroll-snap-type: x mandatory;
+  }
+
+  &__item {
+    position: relative;
+    display: grid;
+    row-gap: 2rem;
+    justify-items: start;
+    box-shadow: 4px 4px 16px 0px rgba(0, 0, 0, 0.15);
+    padding: 1rem;
+    overflow: hidden;
+    scroll-snap-align: start;
+
+    &::before {
+      content: "FEATURED";
+      top: 20px;
+      left: -60px;
+      position: absolute;
+      display: block;
+      transform: rotate(-45deg);
+      padding: 0.25rem 4rem;
+      background-color: var(--clr-main);
+      color: #fff;
+    }
+  }
+
+  &__figure {
+    overflow: hidden;
+  }
+
+  &__img {
+    object-fit: contain;
+  }
+
+  &__heading {
+    // margin-top: 1rem;
+    text-align: center;
+    font-size: inherit;
+  }
+
+  &__keys {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    width: 100%;
+    font-size: var(--fs-50);
+  }
+
+  &__progressbar {
+    position: relative;
+    flex: 1;
+    height: 1rem;
+
+    &::after {
+      content: "";
+      position: absolute;
+      width: var(--keys, 50%);
+      height: 100%;
+      background-color: var(--bg, red);
+      border-radius: 1rem;
+    }
+  }
+}

@@ -1,0 +1,45 @@
+.navigation {
+  display: grid;
+  grid-template-columns: subgrid;
+  grid-column: full-start/full-end;
+
+  padding: 1rem 0;
+  background-color: black;
+
+  &__content {
+    display: flex;
+    grid-template-columns: subgrid;
+    grid-column: container-start/container-end;
+
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__logo {
+    height: 6rem;
+  }
+
+  &__list {
+    display: flex;
+    gap: 4rem;
+    list-style: none;
+  }
+
+  &__link {
+    &:link,
+    &:visited {
+      display: block;
+      text-decoration: none;
+      color: var(--clr-white);
+      font-size: var(--fs-100);
+      font-weight: 500;
+      text-transform: uppercase;
+      transition: color 0.3s;
+    }
+
+    &:hover {
+      color: var(--clr-main);
+      animation: pulse 1s infinite;
+    }
+  }
+}

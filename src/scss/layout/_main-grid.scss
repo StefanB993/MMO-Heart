@@ -1,0 +1,9 @@
+.main-grid {
+  --padding: 2rem;
+  --container: 80rem;
+
+  display: grid;
+  grid-template-columns:
+    [full-start] var(--padding) [main-start] 1fr [container-start] minmax(0, var(--container)) [container-end] 1fr [main-end] var(--padding)
+    [full-end];
+}

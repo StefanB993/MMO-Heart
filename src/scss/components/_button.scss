@@ -1,0 +1,42 @@
+.btn {
+  border: none;
+  border-radius: 0.5rem;
+  padding: 0.5em 1em;
+
+  &--full {
+    background-color: var(--clr-main);
+    color: #fff;
+  }
+
+  &--end {
+    justify-self: end;
+  }
+
+  &--redeem {
+    font-size: var(--fs-50);
+  }
+
+  &:hover {
+    animation: pulse 1s infinite;
+  }
+}
+
+.control {
+  top: 50%;
+  transform: translateY(-50%);
+  position: absolute;
+  border: none;
+  border-radius: 50%;
+  width: 2rem;
+  height: 2rem;
+  background-color: var(--clr-main);
+  color: #fff;
+
+  &--right {
+    right: 0;
+  }
+
+  &--left {
+    left: 0;
+  }
+}
