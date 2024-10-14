@@ -25,3 +25,11 @@ select {
 html {
   scroll-behavior: smooth;
 }
+
+a {
+  &:link,
+  &:visited {
+    text-decoration: none;
+    color: inherit;
+  }
+}

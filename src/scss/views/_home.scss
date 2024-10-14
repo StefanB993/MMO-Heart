@@ -1,0 +1,63 @@
+.new-games {
+  @include grid(3, var(--gap-md));
+}
+
+.game {
+  box-shadow: var(--box-shadow);
+  border-radius: var(--border-radius);
+  overflow: hidden;
+
+  &__header {
+    position: relative;
+    overflow: hidden;
+
+    &::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background-color: rgba(0, 0, 0, 0.2);
+      opacity: 0;
+      transition: opacity 0.3s;
+      z-index: 1000;
+    }
+  }
+
+  &__img {
+    object-fit: cover;
+    object-position: center;
+    height: 100%;
+    width: 100%;
+    transition: transform 0.3s;
+  }
+
+  &__body {
+    @include grid(1, var(--gap-xs));
+    padding: 1rem;
+  }
+
+  &__title {
+    &-sub {
+      display: flex;
+      gap: 0.5rem;
+      margin-top: 0.5rem;
+      // justify-content: space-between;
+    }
+  }
+
+  &__dev,
+  &__date {
+    background-color: var(--clr-main);
+    color: #fff;
+    padding: 0.25rem 0.5rem;
+  }
+
+  &:hover {
+    .game__img {
+      transform: scale(1.05);
+    }
+
+    .game__header::before {
+      opacity: 1;
+    }
+  }
+}

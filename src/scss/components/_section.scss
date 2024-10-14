@@ -1,0 +1,13 @@
+.section {
+  display: grid;
+  grid-template-columns: subgrid;
+  grid-column: container-start/container-end;
+  margin-top: var(--mg-lg);
+
+  .heading-container {
+    display: flex;
+    gap: var(--gap-xs);
+    align-items: center;
+    margin-bottom: var(--mg-sm);
+  }
+}

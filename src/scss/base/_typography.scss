@@ -17,8 +17,24 @@ body {
   }
 
   &--secondary {
+    color: var(--clr-main);
+    color: #be284f;
   }
 
   &--tertiary {
+  }
+
+  &--sub {
+    font-weight: 400;
+    font-size: var(--fs-100);
+    transition: color 0.2s;
+
+    &:hover {
+      color: var(--clr-main);
+    }
+
+    &::before {
+      content: " • ";
+    }
   }
 }

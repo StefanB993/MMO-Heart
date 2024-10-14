@@ -1,3 +1,4 @@
+export const SLIDER_SEC = 3000;
 export const API_MB = "https://mmo-games.p.rapidapi.com/";
 export const OPTIONS = {
   method: "GET",

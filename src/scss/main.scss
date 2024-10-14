@@ -1,10 +1,15 @@
 @import "base/reset";
 @import "base/variables";
 @import "base/typography";
-@import "base/util";
+
+@import "mixin/grid";
+@import "utilities/animations";
+
+@import "components/giveaway";
+@import "components/button";
+@import "components/section";
 
 @import "layout/main-grid";
 @import "layout/navigation";
 
-@import "components/giveaway";
-@import "components/button";
+@import "views/home";
