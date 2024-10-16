@@ -2,6 +2,7 @@
   border: none;
   border-radius: 0.5rem;
   padding: 0.5em 1em;
+  transition: all 0.2s;
 
   &--full {
     background-color: var(--clr-main);
@@ -10,6 +11,7 @@
 
   &--end {
     justify-self: end;
+    align-self: end;
   }
 
   &--redeem {
@@ -17,7 +19,7 @@
   }
 
   &:hover {
-    animation: pulse 1s infinite;
+    background-color: var(--clr-main-dark);
   }
 }
 

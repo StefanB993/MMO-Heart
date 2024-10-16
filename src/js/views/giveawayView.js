@@ -11,11 +11,11 @@ class GiveawayView extends View {
   // MARKUP GENERATION
   _generateMarkup() {
     return this._data.reduce((sum, curr) => {
-      return (sum += this.#generateArticle(curr));
+      return (sum += this.#generateGame(curr));
     }, "");
   }
 
-  #generateArticle(article) {
+  #generateGame(article) {
     return `<article class="giveaway__item">
                 <figure class="giveaway__figure">
                     <img class="giveaway__img" src=${article.img} alt="" />

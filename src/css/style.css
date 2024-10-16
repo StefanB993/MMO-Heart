@@ -28,15 +28,17 @@ html {
   scroll-behavior: smooth;
 }
 
+a {
+  color: inherit;
+}
 a:link, a:visited {
   text-decoration: none;
-  color: inherit;
 }
 
 :root {
   --fs-50: 0.9rem;
   --fs-100: 1rem;
-  --fs-150: 1.15rem;
+  --fs-150: 1.1rem;
   --fs-200: 1.5rem;
   --fs-300: 2rem;
   --fs-400: 3rem;
@@ -58,8 +60,8 @@ a:link, a:visited {
   --gap-sm: 2rem;
   --gap-md: 2.5rem;
   --gap-lg: 3rem;
-  --mg-xs: 1.25rem;
-  --mg-sm: 2rem;
+  --mg-xs: 0.5rem;
+  --mg-sm: 1rem;
   --mg-md: 3rem;
   --mg-lg: 5rem;
 }
@@ -170,6 +172,7 @@ body {
   border: none;
   border-radius: 0.5rem;
   padding: 0.5em 1em;
+  transition: all 0.2s;
 }
 .btn--full {
   background-color: var(--clr-main);
@@ -177,12 +180,13 @@ body {
 }
 .btn--end {
   justify-self: end;
+  align-self: end;
 }
 .btn--redeem {
   font-size: var(--fs-50);
 }
 .btn:hover {
-  animation: pulse 1s infinite;
+  background-color: var(--clr-main-dark);
 }
 
 .control {
@@ -213,9 +217,53 @@ body {
   display: flex;
   gap: var(--gap-xs);
   align-items: center;
-  margin-bottom: var(--mg-sm);
+  margin-bottom: var(--mg-md);
 }
 
+.pagination {
+  position: relative;
+  display: grid;
+  place-content: center;
+  width: 10rem;
+  justify-self: center;
+  margin-top: var(--mg-md);
+}
+.pagination__page {
+  color: var(--clr-main);
+}
+
+/* HTML: <div class="loader"></div> */
+.loader {
+  margin-inline: auto;
+  width: 50px;
+  aspect-ratio: 1;
+  display: grid;
+  -webkit-mask: conic-gradient(from 15deg, rgba(0, 0, 0, 0), #000);
+  animation: l26 1s infinite steps(12);
+}
+
+.loader,
+.loader:before,
+.loader:after {
+  background: radial-gradient(closest-side at 50% 12.5%, #f03355 96%, rgba(0, 0, 0, 0)) 50% 0/20% 80% repeat-y, radial-gradient(closest-side at 12.5% 50%, #f03355 96%, rgba(0, 0, 0, 0)) 0 50%/80% 20% repeat-x;
+}
+
+.loader:before,
+.loader:after {
+  content: "";
+  grid-area: 1/1;
+  transform: rotate(30deg);
+}
+
+.loader:after {
+  transform: rotate(60deg);
+}
+
+@keyframes l26 {
+  100% {
+    transform: rotate(1turn);
+  }
+}
 .main-grid {
   --padding: 2rem;
   --container: 80rem;
@@ -311,6 +359,42 @@ body {
 }
 .game:hover .game__header::before {
   opacity: 1;
+}
+
+.news {
+  display: grid;
+  gap: var(--gap-xs);
+}
+
+.article {
+  display: flex;
+  column-gap: var(--gap-xs);
+  row-gap: 0.5rem;
+  padding: 0.5rem;
+}
+.article__figure {
+  flex: 0 0 15rem;
+  overflow: hidden;
+}
+.article__img {
+  width: 100%;
+  transition: transform 0.3s;
+}
+.article__content {
+  flex: 1;
+  display: grid;
+}
+.article__span {
+  color: var(--clr-main);
+  font-weight: var(--fw-600);
+}
+.article__heading {
+  font-size: var(--fs-100);
+  margin-top: var(--mg-xs);
+  margin-bottom: var(--mg-sm);
+}
+.article:hover .article__img {
+  transform: scale(1.1);
 }
 
 /*# sourceMappingURL=style.css.map */

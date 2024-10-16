@@ -61,3 +61,46 @@
     }
   }
 }
+
+.news {
+  display: grid;
+  gap: var(--gap-xs);
+}
+
+.article {
+  display: flex;
+  column-gap: var(--gap-xs);
+  row-gap: 0.5rem;
+
+  padding: 0.5rem;
+
+  &__figure {
+    flex: 0 0 15rem;
+    overflow: hidden;
+  }
+
+  &__img {
+    width: 100%;
+    transition: transform 0.3s;
+  }
+
+  &__content {
+    flex: 1;
+    display: grid;
+  }
+
+  &__span {
+    color: var(--clr-main);
+    font-weight: var(--fw-600);
+  }
+
+  &__heading {
+    font-size: var(--fs-100);
+    margin-top: var(--mg-xs);
+    margin-bottom: var(--mg-sm);
+  }
+
+  &:hover &__img {
+    transform: scale(1.1);
+  }
+}

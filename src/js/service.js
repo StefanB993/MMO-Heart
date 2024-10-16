@@ -17,7 +17,19 @@ class Service {
       const data = await fetch(`${API_MB}games?${params}`, OPTIONS);
       const res = await data.json();
       return res;
-    } catch (error) {}
+    } catch (error) {
+      throw error;
+    }
+  }
+
+  async getNews() {
+    try {
+      const data = await fetch(`${API_MB}latestnews`, OPTIONS);
+      const res = await data.json();
+      return res;
+    } catch (error) {
+      throw error;
+    }
   }
 
   #objectToSearchParams(obj) {

@@ -4,7 +4,7 @@ class NewGamesView extends View {
   _parentEl = document.querySelector(".new-games");
 
   _generateMarkup() {
-    return this._data.reduce((sum, curr) => (sum += this.#generateGame(curr)), "");
+    return this._data.games.reduce((sum, curr) => (sum += this.#generateGame(curr)), "");
   }
 
   #generateGame(game) {
@@ -17,7 +17,7 @@ class NewGamesView extends View {
                             <h3 class="heading heading--tertiary"><a href="${game.gameUrl}">${game.title}</a></h3>
                             <div class="game__title-sub">
                                 <p class="game__dev">${game.developer}</p>
-                                <p class="game__date">${game.releaseDate}</p>
+                                <p class="game__date">${this.#formatDate(game.releaseDate)}</p>
                             </div>
                         </div>
                         <p class="game_desc">${game.shortDescription}</p>
@@ -25,9 +25,11 @@ class NewGamesView extends View {
                 </article>`;
   }
 
-  //   #formatDate(date) {
-  //     const date = new Date(date);
-  //   }
+  #formatDate(date) {
+    const newDate = new Date(date);
+    const formatedDate = newDate.toLocaleDateString(this._data.language, { day: "numeric", month: "numeric", year: "numeric" });
+    return formatedDate;
+  }
 }
 
 export default new NewGamesView();

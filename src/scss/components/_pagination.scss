@@ -1,0 +1,12 @@
+.pagination {
+  position: relative;
+  display: grid;
+  place-content: center;
+  width: 10rem;
+  justify-self: center;
+  margin-top: var(--mg-md);
+
+  &__page {
+    color: var(--clr-main);
+  }
+}
