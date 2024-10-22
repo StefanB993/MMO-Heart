@@ -21,18 +21,48 @@
         </ul>
       </div>
     </nav>
-    <section class="section">
-      <div class="heading-container">
-        <h2 class="heading heading--secondary">Join the Giveaway</h2>
+
+    <section class="section section--browse">
+      <div class="browse">
+        <div class="browse__search">
+          <i class="fas fa-search browse__icon"></i>
+          <input class="browse__input" type="text" placeholder="Search by tag" />
+          <i class="fas fa-sliders browse__icon filter"></i>
+
+          <div class="browse__suggestions">
+            <ul class="browse__list"></ul>
+          </div>
+        </div>
+        <div class="browse__filters">
+          <div class="browse__filter">
+            <p>PLATFORM <i class="fas fa-chevron-down"></i><i class="fas fa-chevron-up hidden"></i></p>
+            <div class="browse__dropdown">
+              <ul class="browse__dropdown-list">
+                <li class="browse__dropdown-item" data-role="platform" data-filter="pc">PC</li>
+                <li class="browse__dropdown-item" data-role="platform" data-filter="browser">Browser</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="browse__filter">
+            <p>SORT <i class="fas fa-chevron-down"></i><i class="fas fa-chevron-up hidden"></i></p>
+            <div class="browse__dropdown">
+              <ul class="browse__dropdown-list">
+                <li class="browse__dropdown-item" data-role="sort" data-filter="release-date">Release date</li>
+                <li class="browse__dropdown-item" data-role="sort" data-filter="relevance">Relevance</li>
+                <li class="browse__dropdown-item" data-role="sort" data-filter="alphabetical">Alphabetical</li>
+              </ul>
+            </div>
+          </div>
+        </div>
       </div>
-      <div class="giveaway">
-        <div class="giveaway__wrapper"></div>
-        <button class="control control--left" data-direction="prev">
-          <i class="fas fa-chevron-left"></i>
-        </button>
-        <button class="control control--right" data-direction="next">
-          <i class="fas fa-chevron-right"></i>
-        </button>
+      <div class="tags">
+        <div class="tags__results"></div>
+        <div class="tags__container"></div>
+      </div>
+      <div class="games">
+        <div class="games__container"></div>
+        <div class="pagination pagination--games"></div>
       </div>
     </section>
 
@@ -138,12 +168,27 @@
 
     <section class="section">
       <div class="heading-container">
+        <h2 class="heading heading--secondary">Join the Giveaway</h2>
+      </div>
+      <div class="giveaway">
+        <div class="giveaway__wrapper"></div>
+        <button class="control control--left" data-direction="prev">
+          <i class="fas fa-chevron-left"></i>
+        </button>
+        <button class="control control--right" data-direction="next">
+          <i class="fas fa-chevron-right"></i>
+        </button>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="heading-container">
         <h2 class="heading heading--secondary">Latest news</h2>
         <a href="#" class="heading--sub">View more</a>
       </div>
 
       <div class="news"></div>
-      <div class="pagination"></div>
+      <div class="pagination pagination--news"></div>
     </section>
   </body>
 </html>

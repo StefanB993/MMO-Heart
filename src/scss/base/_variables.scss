@@ -13,6 +13,8 @@
   --fw-600: 600;
 
   --clr-text: #2f0a14;
+  --clr-grey: #25252b;
+  --clr-grey-light: #808080;
   --clr-white: #fff;
   --clr-main: #ed3263;
   --clr-main-dark: #d52d59;
@@ -21,8 +23,12 @@
 
   --container: 70rem;
   --box-shadow: 4px 4px 16px 0px rgba(0, 0, 0, 0.15);
+  --box-shadow-notop: 0 0px 8px 0px rgba(0, 0, 0, 0.3);
   --border-radius: 0.5rem;
+  --border-radius-top: 0.5rem 0.5rem 0 0;
+  --border-radius-bottom: 0 0 0.5rem 0.5rem;
 
+  --gap-xxs: 0.5rem;
   --gap-xs: 1.25rem;
   --gap-sm: 2rem;
   --gap-md: 2.5rem;

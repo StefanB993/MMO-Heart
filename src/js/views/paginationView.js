@@ -1,13 +1,11 @@
 import View from "./view.js";
 
-class PaginationView extends View {
-  _parentEl = document.querySelector(".pagination");
+export class PaginationView extends View {
+  _parentEl = document.querySelector(".pagination--news");
 
   _generateMarkup() {
-    const { page, articlePerPage, news } = this._data;
-    const totalPages = Math.ceil(news.length / articlePerPage);
-
-    console.log(page, totalPages);
+    const [page, elementsPerPage, elements] = this._data;
+    const totalPages = Math.ceil(elements.length / elementsPerPage);
 
     const leftButton =
       page > 1
@@ -32,10 +30,11 @@ class PaginationView extends View {
   }
 
   addHandlerClick(cb) {
-    this._parentEl.addEventListener("click", function (e) {
+    this._parentEl.addEventListener("click", (e) => {
       const btn = e.target.closest(".pagination__control");
       if (!btn) return;
       cb(+btn.dataset.goTo);
+      this._parentEl.parentElement.scrollIntoView();
     });
   }
 }
