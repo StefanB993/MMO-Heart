@@ -1,6 +1,8 @@
 # MMO Heart
 
-Welcome to the MMO Heart project! This web application serves as a comprehensive platform for browsing MMO games, featuring various sections like trending games, giveaways, and news. It fetches data from the MMO Bomb API to provide users with a dynamic and engaging experience.
+Welcome to the MMO Heart project! 
+This web application serves as a comprehensive platform for browsing MMO games, featuring various sections like trending games, giveaways, and news. 
+It fetches data from the MMO Bomb API to provide users with a dynamic and engaging experience.
 
 ## Table of Contents
 
@@ -23,13 +25,13 @@ Welcome to the MMO Heart project! This web application serves as a comprehensive
 ## Technologies Used
 
 - **HTML**: For structuring the content.
-- **SCSS**: For styling and layout.
-- **JavaScript**: Native JS for interactivity and API integration.
+- **SCSS**: For styling, following a 7+1 structure for organized and maintainable styles.
+- **JavaScript**: Vanilla JS for interactivity and API integration.
 - **MVC Architecture**: Organized code structure following the Model-View-Controller design pattern.
 
 ## Architecture
 
-This project is structured using the 7+1 pattern, ensuring a clear separation of concerns:
+The project uses the MVC architecture, which ensures a clear separation of concerns:
 
 - **Model**: Manages data and business logic.
 - **View**: Represents the UI components.
