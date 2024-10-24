@@ -1,0 +1,113 @@
+.background {
+  display: none;
+  grid-template-columns: minmax(1rem, 1fr) minmax(0, 60rem) minmax(1rem, 1fr);
+  place-content: center;
+  position: fixed;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.7);
+  z-index: 9000;
+
+  .current-game {
+    position: relative;
+    grid-column: 2;
+    background-color: #fff;
+    padding: 1rem;
+    border-radius: var(--border-radius);
+    overflow-y: scroll;
+    height: 100%;
+
+    & > *:not(:first-child, :last-child) {
+      margin-top: var(--gap-sm);
+    }
+
+    &__header {
+      & > *:not(:nth-child(2), :last-child) {
+        margin-bottom: var(--gap-xs);
+      }
+    }
+
+    &__heading {
+      font-size: var(--fs-300);
+      color: var(--clr-main-dark);
+      &--sub {
+        font-size: var(--fs-200);
+        text-align: start;
+        color: var(--clr-main-dark);
+      }
+    }
+    &__content {
+      display: grid;
+      // gap: var(--gap-xs);
+      grid-template-columns: 1fr 1fr;
+      justify-content: space-between;
+    }
+
+    &__about {
+      display: grid;
+      gap: var(--gap-xs);
+      p {
+        line-height: 1.7;
+      }
+    }
+    &__additional-info {
+      display: grid;
+      grid-template-columns: repeat(2, max-content);
+      column-gap: var(--gap-xs);
+      row-gap: var(--gap-xxs);
+      justify-items: start;
+    }
+    &__info {
+      span {
+        color: var(--clr-main);
+        // display: block;
+        // background-color: var(--clr-main);
+        // color: #fff;
+      }
+    }
+    &__system-requirements {
+      display: grid;
+      gap: var(--gap-xs);
+    }
+
+    &__requirements {
+      display: grid;
+      gap: var(--gap-xxs);
+
+      span {
+        color: var(--clr-main);
+        // display: inline-block;
+        // padding: 0.5rem;
+        // background-color: var(--clr-main);
+        // color: #fff;
+      }
+    }
+
+    &__btn {
+      top: 0.5rem;
+      right: 0.5rem;
+      position: absolute;
+      border-radius: 50%;
+    }
+
+    @media (width < 40em) {
+      &__heading {
+      }
+      &__content {
+        grid-template-columns: 1fr;
+        gap: var(--gap-sm);
+      }
+
+      .gallery {
+        grid-auto-flow: row;
+      }
+
+      .gallery__container {
+        height: 10rem;
+      }
+    }
+  }
+}
+
+.show {
+  display: grid;
+}
