@@ -6,6 +6,7 @@ import { ARTICLE_PER_PAGE, GAMES_PER_PAGE } from "./config.js";
 
 class App {
   state = {
+    currentGame: null,
     page: 1,
     pageGames: 1,
     articlePerPage: ARTICLE_PER_PAGE,
@@ -41,6 +42,11 @@ class App {
   async getGamesByFilter() {
     this.state.games = await service.getGamesByFilter(this.params);
     this.state.games = this.state.games.map((game) => new Game(game));
+  }
+
+  async getGameById(id) {
+    const game = await service.getGameById(id);
+    this.state.currentGame = new Game(game);
   }
 
   getNewsPerPage(page = this.state.page) {

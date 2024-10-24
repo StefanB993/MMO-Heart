@@ -3,6 +3,7 @@
   --gap: var(--gap-sm);
   position: relative;
   font-size: var(--fs-50);
+  overflow: hidden;
 
   &__wrapper {
     --padding: 1rem;
@@ -75,5 +76,17 @@
       background-color: var(--bg, red);
       border-radius: 1rem;
     }
+  }
+
+  @media (width < 50em) {
+    --column: 3;
+  }
+
+  @media (width < 40em) {
+    --column: 2;
+  }
+
+  @media (width < 30em) {
+    --column: 1;
   }
 }

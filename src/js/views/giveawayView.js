@@ -25,7 +25,7 @@ class GiveawayView extends View {
                     <span>Keys left:</span>
                 <div class="giveaway__progressbar"></div>
                 </div>
-                <button class="btn btn--full btn--end btn--redeem">Redeem</button>
+                <button class="btn btn--full btn--end btn--redeem"><a target="_blank" href=${article.url}>Redeem</a></button>
             </article>`;
   }
 
@@ -91,7 +91,6 @@ class GiveawayView extends View {
     const articles = Array.from(document.querySelectorAll(".giveaway__item"));
     if (articles.length === 0) return;
 
-    // Calculate how many articles can fit based on the client width
     const maxVisibleArticles = Math.floor(this.#containerWidth / this.#cardWidth);
 
     articles.slice(0, maxVisibleArticles).forEach((el) => {

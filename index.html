@@ -14,15 +14,17 @@
         <img src="src/css/img/Logo.png" alt="MMO Pulse logo" class="navigation__logo" />
 
         <ul class="navigation__list">
-          <li><a href="#" class="navigation__link">News</a></li>
-          <li><a href="#" class="navigation__link">Giveaways</a></li>
-          <li><a href="#" class="navigation__link">Browse games</a></li>
-          <li><a href="#" class="navigation__link">About</a></li>
+          <li><a href="#news" class="navigation__link">News</a></li>
+          <li><a href="#giveaway" class="navigation__link">Giveaways</a></li>
+          <li><a href="#trending" class="navigation__link">Trending</a></li>
+          <li><a href="#browse" class="navigation__link">Browse games</a></li>
         </ul>
+
+        <button class="btn btn--nav"><i class="fas fa-bars"></i></button>
       </div>
     </nav>
 
-    <section class="section section--browse">
+    <section id="browse" class="section section--browse">
       <div class="browse">
         <div class="browse__search">
           <i class="fas fa-search browse__icon"></i>
@@ -66,107 +68,14 @@
       </div>
     </section>
 
-    <section class="section">
+    <section id="trending" class="section">
       <div class="heading-container">
         <h2 class="heading heading--secondary">Explore the Latest MMOs</h2>
-        <a href="#" class="heading--sub">View more</a>
       </div>
-
-      <div class="new-games">
-        <article class="game">
-          <figure class="game__header">
-            <img class="game__img" src="https://www.mmobomb.com/g/1186/thumbnail.jpg" alt="Throne and Liberty" />
-          </figure>
-          <div class="game__body">
-            <div class="game__title">
-              <h3 class="heading heading--tertiary">Throne and Liberty</h3>
-              <div class="game__title-sub">
-                <p class="game__dev">NCSoft</p>
-                <p class="game__date">09.11.2024</p>
-              </div>
-            </div>
-            <p class="game_desc">NCSoft's next big MMORPG release goes global, guild sieges and all.</p>
-          </div>
-        </article>
-        <article class="game">
-          <figure class="game__header">
-            <img class="game__img" src="https://www.mmobomb.com/g/1186/thumbnail.jpg" alt="Throne and Liberty" />
-          </figure>
-          <div class="game__body">
-            <div class="game__title">
-              <h3 class="heading heading--tertiary">Throne and Liberty</h3>
-              <div class="game__title-sub">
-                <p class="game__dev">NCSoft</p>
-                <p class="game__date">09.11.2024</p>
-              </div>
-            </div>
-            <p class="game_desc">NCSoft's next big MMORPG release goes global, guild sieges and all.</p>
-          </div>
-        </article>
-        <article class="game">
-          <figure class="game__header">
-            <img class="game__img" src="https://www.mmobomb.com/g/1186/thumbnail.jpg" alt="Throne and Liberty" />
-          </figure>
-          <div class="game__body">
-            <div class="game__title">
-              <h3 class="heading heading--tertiary">Throne and Liberty</h3>
-              <div class="game__title-sub">
-                <p class="game__dev">NCSoft</p>
-                <p class="game__date">09.11.2024</p>
-              </div>
-            </div>
-            <p class="game_desc">NCSoft's next big MMORPG release goes global, guild sieges and all.</p>
-          </div>
-        </article>
-        <article class="game">
-          <figure class="game__header">
-            <img class="game__img" src="https://www.mmobomb.com/g/353/thumbnail.jpg" alt="Throne and Liberty" />
-          </figure>
-          <div class="game__body">
-            <div class="game__title">
-              <h3 class="heading heading--tertiary">Throne and Liberty</h3>
-              <div class="game__title-sub">
-                <p class="game__dev">NCSoft</p>
-                <p class="game__date">09.11.2024</p>
-              </div>
-            </div>
-            <p class="game_desc">NCSoft's next big MMORPG release goes global, guild sieges and all.</p>
-          </div>
-        </article>
-        <article class="game">
-          <figure class="game__header">
-            <img class="game__img" src="https://www.mmobomb.com/g/472/thumbnail.jpg" alt="Throne and Liberty" />
-          </figure>
-          <div class="game__body">
-            <div class="game__title">
-              <h3 class="heading heading--tertiary">Throne and Liberty</h3>
-              <div class="game__title-sub">
-                <p class="game__dev">NCSoft</p>
-                <p class="game__date">09.11.2024</p>
-              </div>
-            </div>
-            <p class="game_desc">NCSoft's next big MMORPG release goes global, guild sieges and all.</p>
-          </div>
-        </article>
-        <article class="game">
-          <figure class="game__header">
-            <img class="game__img" src="https://www.mmobomb.com/g/1119/thumbnail.jpg" alt="Throne and Liberty" />
-          </figure>
-          <div class="game__body">
-            <div class="game__title">
-              <h3 class="heading heading--tertiary">Throne and Liberty</h3>
-              <div class="game__title-sub">
-                <p class="game__dev">NCSoft</p>
-                <p class="game__date">09.11.2024</p>
-              </div>
-            </div>
-            <p class="game_desc">NCSoft's next big MMORPG release goes global, guild sieges and all.</p>
-          </div>
-        </article>
-      </div>
+      <div class="new-games"></div>
     </section>
 
-    <section class="section">
+    <section id="giveaway" class="section">
       <div class="heading-container">
         <h2 class="heading heading--secondary">Join the Giveaway</h2>
       </div>
@@ -181,14 +90,37 @@
       </div>
     </section>
 
-    <section class="section">
+    <section id="news" class="section">
       <div class="heading-container">
         <h2 class="heading heading--secondary">Latest news</h2>
-        <a href="#" class="heading--sub">View more</a>
       </div>
 
       <div class="news"></div>
       <div class="pagination pagination--news"></div>
     </section>
+    <footer class="footer">
+      <h2 class="footer__heading">Hope to hear from you</h2>
+      <p class="footer__gmail">stefan.balog1993@gmail.com</p>
+      <div class="footer__socials">
+        <a target="_blank" href="https://www.linkedin.com/in/stefan-balog-a4b3231a4" class="footer__link"><i class="fab fa-linkedin"></i></a>
+        <a target="_blank" href="https://github.com/StefanB993" class="footer__link"><i class="fab fa-github"></i></a>
+        <a target="_blank" href="https://www.instagram.com/nichtsnutz93/" class="footer__link"><i class="fab fa-instagram"></i></a>
+      </div>
+      <p class="footer__text">
+        Made possible by <a target="_blank" href="https://www.mmobomb.com/"><img src="src/css/img/MMOBomb.png" alt="MMO BOMB" /></a>
+      </p>
+    </footer>
+    <nav class="nav-mob">
+      <ul class="navigation__list">
+        <li><a href="#news" class="navigation__link">News</a></li>
+        <li><a href="#giveaway" class="navigation__link">Giveaways</a></li>
+        <li><a href="#trending" class="navigation__link">Trending</a></li>
+        <li><a href="#browse" class="navigation__link">Browse games</a></li>
+      </ul>
+      <button class="nav-mob__btn control control--right" data-direction="next">
+        <i class="fas fa-chevron-left"></i>
+      </button>
+    </nav>
+    <div class="background"></div>
   </body>
 </html>

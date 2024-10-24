@@ -14,7 +14,7 @@ export class NewGamesView extends View {
                     </figure>
                     <div class="game__body">
                         <div class="game__title">
-                            <h3 class="heading heading--tertiary"><a href="${game.gameUrl}">${game.title}</a></h3>
+                            <h3 class="heading heading--tertiary"><a target="_blank" href="${game.gameUrl}">${game.title}</a></h3>
                             <div class="game__title-sub">
                                 <p class="game__dev">${game.developer}</p>
                                 <p class="game__date">${this._formatDate(game.releaseDate)}</p>

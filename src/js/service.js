@@ -1,54 +1,41 @@
 import { API_MB, OPTIONS } from "./config.js";
 
 class Service {
+  async #fetchData(enpoint) {
+    const response = await fetch(enpoint, OPTIONS);
+    if (!response.ok) throw new Error(`Error fetching data`);
+    return response.json();
+  }
   async getGiveaways() {
-    try {
-      const data = await fetch(`${API_MB}giveaways`, OPTIONS);
-      const res = await data.json();
-      return res;
-    } catch (error) {
-      throw error;
-    }
+    return this.#fetchData(`${API_MB}giveaways`);
   }
 
   async getGames(options) {
-    try {
-      const params = this.#objectToSearchParams(options);
-      const data = await fetch(`${API_MB}games?${params}`, OPTIONS);
-      const res = await data.json();
-      return res;
-    } catch (error) {
-      throw error;
-    }
+    const params = this.#objectToSearchParams(options);
+    return this.#fetchData(`${API_MB}games?${params}`);
+  }
+
+  async getGameById(id) {
+    return this.#fetchData(`${API_MB}game?id=${id}`);
   }
 
   async getGamesByFilter(options) {
-    try {
-      if (!options.category.length) {
-        return await this.getGames(options);
-      }
-      const promise = options.category.map(async (category) => {
-        const obj = JSON.parse(JSON.stringify(options));
-        obj.category = category;
-        return await this.getGames(obj);
-      });
-
-      const arr = await Promise.all(promise);
-      if (!arr.length) throw new Error();
-      return arr.length > 1 ? this.#findCommon(arr) : arr[0];
-    } catch (error) {
-      throw error;
+    if (!options.category.length) {
+      return await this.getGames(options);
     }
+    const promise = options.category.map(async (category) => {
+      const obj = JSON.parse(JSON.stringify(options));
+      obj.category = category;
+      return await this.getGames(obj);
+    });
+
+    const arr = await Promise.all(promise);
+    if (!arr.length) throw new Error("No games found");
+    return arr.length > 1 ? this.#findCommon(arr) : arr[0];
   }
 
   async getNews() {
-    try {
-      const data = await fetch(`${API_MB}latestnews`, OPTIONS);
-      const res = await data.json();
-      return res;
-    } catch (error) {
-      throw error;
-    }
+    return this.#fetchData(`${API_MB}latestnews`);
   }
 
   #objectToSearchParams(obj) {

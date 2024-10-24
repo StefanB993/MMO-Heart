@@ -9,6 +9,8 @@ import tagsView from "./views/tagsView.js";
 import gamesView from "./views/gamesView.js";
 import countView from "./views/countView.js";
 import gamesPaginationView from "./views/gamesPaginationView.js";
+import currentGameView from "./views/currentGameView.js";
+import navigationView from "./views/navigationView.js";
 
 class Controller {
   async init() {
@@ -61,12 +63,24 @@ class Controller {
   }
 
   #hookEvents() {
+    navigationView.addHandlerClick();
     paginationView.addHandlerClick(this.#controlPaginationNews.bind(this));
     gamesPaginationView.addHandlerClick(this.#controlPaginationGames.bind(this));
     searchView.addHandlerChange();
     searchView.addHandlerClick(this.#controlAddCategory.bind(this));
     filtersView.addHandlerClick(this.#controlPlatform.bind(this), this.#controlSort.bind(this));
     tagsView.addHandlerRemove(this.#controlRemoveCategory.bind(this));
+    gamesView.addHandlerHashChange(this.#test);
+    currentGameView.addHandlerClose();
+  }
+
+  async #test() {
+    const id = window.location.hash.slice(1);
+    if (!id) return;
+    await App.getGameById(id);
+    console.log(App.state.currentGame);
+    currentGameView.render(App.state.currentGame);
+    currentGameView.showCurrentGame();
   }
 
   #controlPaginationNews(page) {
@@ -117,6 +131,7 @@ class Controller {
 
   async #updateCategoriesAndGames(cb) {
     cb();
+    App.state.pageGames = 1;
     await App.getGamesByFilter();
     this.#renderAfterCategoryUpdate();
   }

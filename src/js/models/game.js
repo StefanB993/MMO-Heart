@@ -11,6 +11,7 @@ export default class Game {
   #release_date;
   #system_requirements;
   #screenshots;
+  #publisher;
 
   constructor(obj) {
     this.#id = obj?.id || ""; // Default to "" if id is not provided
@@ -25,6 +26,7 @@ export default class Game {
     this.#release_date = this.#formatDate(obj?.release_date) || "";
     this.#system_requirements = obj?.minimum_system_requirements || {};
     this.#screenshots = obj?.screenshots || {};
+    this.#publisher = obj?.publisher || "";
   }
 
   #formatDate(date) {
@@ -36,6 +38,10 @@ export default class Game {
   // Getters
   get id() {
     return this.#id;
+  }
+
+  get publisher() {
+    return this.#publisher;
   }
 
   get title() {

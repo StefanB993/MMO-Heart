@@ -39,6 +39,11 @@
   --mg-md: 3rem;
   --mg-lg: 5rem;
 
-  @media (width < 37.5rem) {
+  @media (width < 40rem) {
+    --fs-100: 0.9rem;
+    --fs-200: 1.25rem;
+    --fs-300: 1.5rem;
+    --fs-400: 2.5rem;
+    --fs-500: 3rem;
   }
 }

@@ -3,7 +3,7 @@
   grid-template-columns: subgrid;
   grid-column: full-start/full-end;
 
-  padding: 1rem 0;
+  padding: 1rem 0 1rem 0;
   background-color: black;
 
   &__content {
@@ -41,5 +41,44 @@
       color: var(--clr-main);
       animation: pulse 1s infinite;
     }
+  }
+
+  @media (width < 45em) {
+    &__list {
+      display: none;
+    }
+  }
+}
+
+.nav-mob {
+  display: grid;
+  align-items: start;
+  top: 0;
+  left: 0;
+  height: 100%;
+  position: fixed;
+  background-color: #000;
+  z-index: 4000;
+  padding: 2rem;
+  transform: translateX(-150%);
+  transition: transform 0.5s;
+
+  border-right: 0.1rem solid var(--clr-main);
+
+  &__btn {
+    position: absolute;
+    top: 5rem;
+    right: 0;
+    transform: translateX(50%);
+  }
+
+  .navigation__list {
+    display: flex;
+    flex-direction: column;
+    gap: var(--gap-md);
+  }
+
+  &.open {
+    transform: translateX(0);
   }
 }

@@ -9,6 +9,18 @@
     color: #fff;
   }
 
+  &--nav {
+    display: none;
+    background-color: transparent;
+    color: #fff;
+    font-size: var(--fs-200);
+  }
+
+  &--nav:hover {
+    background-color: transparent !important;
+    color: var(--clr-main);
+  }
+
   &--end {
     justify-self: end;
     align-self: end;
@@ -20,6 +32,12 @@
 
   &:hover {
     background-color: var(--clr-main-dark);
+  }
+
+  @media (width < 45em) {
+    &--nav {
+      display: block;
+    }
   }
 }
 

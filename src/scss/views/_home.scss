@@ -1,13 +1,28 @@
 .new-games {
-  @include grid(3, var(--gap-md));
+  --col: 3;
+  --gap: var(--gap-md);
+
+  @include grid(var(--col), var(--gap));
+
+  @media (width < 70em) {
+    --gap: var(--gap-xs);
+    --col: 2;
+  }
+
+  @media (width < 30em) {
+    --col: 1;
+  }
 }
 
 .game {
   box-shadow: var(--box-shadow);
   border-radius: var(--border-radius);
   // overflow: hidden;
-  align-self: start;
   position: relative;
+
+  &--browse {
+    align-self: start;
+  }
 
   &__header {
     position: relative;
@@ -105,12 +120,15 @@
 
   &__img {
     width: 100%;
+    height: 100%;
+    object-fit: cover;
     transition: transform 0.3s;
   }
 
   &__content {
     flex: 1;
     display: grid;
+    gap: var(--gap-xxs);
   }
 
   &__span {
@@ -127,18 +145,26 @@
   &:hover &__img {
     transform: scale(1.1);
   }
+
+  @media (width < 40em) {
+    flex-direction: column;
+
+    &__content {
+      margin-top: var(--gap-xxs);
+    }
+  }
 }
 
 .browse {
   display: grid;
-  justify-items: center;
+  grid-template-columns: minmax(5rem, 20rem);
+  place-content: center;
   padding: 1rem 0 2rem 0;
   background-color: #000;
   gap: var(--gap-sm);
 
   &__search {
     position: relative;
-    flex: 0 1 25rem;
     display: flex;
     align-items: center;
     padding: 0.75rem 1.5rem;
@@ -161,7 +187,8 @@
   }
 
   &__input {
-    flex: 1;
+    width: 100%;
+    // flex: 1;
     padding: 0.15rem;
     background-color: transparent;
     border: none;
@@ -176,6 +203,7 @@
 
     &.show {
       display: flex;
+      justify-content: center;
     }
   }
 
@@ -317,7 +345,22 @@
   grid-column: container-start/container-end;
   place-content: center;
   &__container {
-    @include grid(4, var(--gap-sm));
+    --col: 4;
+    --gap: var(--gap-sm);
+    @include grid(var(--col), var(--gap));
     grid-auto-flow: dense;
+
+    @media (width < 70em) {
+      --gap: var(--gap-xs);
+      --col: 3;
+    }
+
+    @media (width < 40em) {
+      --col: 2;
+    }
+
+    @media (width < 30em) {
+      --col: 1;
+    }
   }
 }
