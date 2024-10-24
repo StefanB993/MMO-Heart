@@ -8,7 +8,7 @@ export class NewGamesView extends View {
   }
 
   _generateGame(game) {
-    return `<article class="game">
+    return `<article class="game" data-id="${game.id}">
                     <figure class="game__header">
                         <img class="game__img" src="${game.thumbnail}" alt="${game.title}" />
                     </figure>

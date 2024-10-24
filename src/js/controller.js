@@ -71,6 +71,7 @@ class Controller {
     filtersView.addHandlerClick(this.#controlPlatform.bind(this), this.#controlSort.bind(this));
     tagsView.addHandlerRemove(this.#controlRemoveCategory.bind(this));
     gamesView.addHandlerHashChange(this.#test);
+    gamesView.addHandlerClick();
     currentGameView.addHandlerClose();
   }
 
