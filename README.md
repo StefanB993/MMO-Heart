@@ -4,6 +4,9 @@ Welcome to the MMO Heart project!
 This web application serves as a comprehensive platform for browsing MMO games, featuring various sections like trending games, giveaways, and news. 
 It fetches data from the MMO Bomb API to provide users with a dynamic and engaging experience.
 
+## Live Version 
+https://stefanb993.github.io/mmo-heart/
+
 ## Table of Contents
 
 - [Features](#features)
